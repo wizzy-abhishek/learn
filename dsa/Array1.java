@@ -1,5 +1,9 @@
 package dsa;
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Arrays;
+
 public class Array1 {
     /*
     Array is a collection of similar data
@@ -38,4 +42,25 @@ public class Array1 {
     2. Array literals i.e, int[] number = {1, 2};
     3. Autoboxing and Unboxing
      */
+    public static void main(String[] args) {
+        int[] address = new int[5];
+        System.out.println(address);
+        /*
+        Now this is giving me the location of where address reference variable is pointing .
+         */
+        int[] array = { 10 , 20 , 30 };
+        System.out.println(Arrays.toString(array));
+        changearr(array);
+        /*
+        Here we gonna watch the MUTABLE behavior of Array , that value of array can be changed
+        As we can archive a little bit of call by reference in java
+        As we have seen earlier that in swapping or changing of data in primitive data type copy si being shared
+        But in Array when we pass the address of that particular thing is passes where is it stored so changes direct takes place in the literals we have given before
+         */
+        System.out.println(Arrays.toString(array));
+        // To use Arrays.toString(name); we have to import java.util.Arrays class
+    }
+    public static void changearr(int[] array){
+        array[0] = 99 ;
+    }
 }

@@ -1,4 +1,4 @@
-package learning;
+package com.abhishek;
 
 import java.util.Arrays;
 
@@ -8,7 +8,7 @@ public class LearningSwapFunc {
         int b = 20 ;
         swap(a , b); // it changes the copy of obj 10 and 20 that is passed
         // [ PRIMITIVE DATA TYPES JUST PASS BY VALUE ]
-        // In case of primitives pass by value mech works
+        // In case of primitives pass by value mechanism works
         // Hence a copy of data is passed so changes won't occur in real data 
         System.out.println(a + " " + b); //pass by value so the copy of obj is passes
 
