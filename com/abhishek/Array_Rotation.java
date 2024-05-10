@@ -6,7 +6,7 @@ public class Array_Rotation{
 
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5,6,7};
-        int k = 3 ;
+        int k = 54944546 ;
         rotate(arr , k);
     }
 
@@ -15,14 +15,14 @@ public class Array_Rotation{
             int temp = 0 ;
             int last = nums.length-1;
             temp = nums[last] ;
-            while(last >= 0){
+            for(; last >= 0 ; last--)
+            {
                 if(last == 0){
                     nums[last] = temp ;
                 }
                 else{
                 nums[last] = nums[last -1];
                 }
-                last-- ;
             }
         }
         System.out.println(Arrays.toString(nums));
