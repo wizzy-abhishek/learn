@@ -1,0 +1,7 @@
+String buffer uses an array of char and it has predefined space .
+StringBuffer are mutable 
+As StringBuffer gets overflow it automatically insreaeses the size of the array 
+StringBuffer is Thread safe means no two thread can utilize a thread simultaneously means the actions used on it are syncronized 
+Thats why its lil slower
+
+StringBuilder arent thread safe 

@@ -1,0 +1,16 @@
+Wrapper class is a class that gives us the power to convert primitive data types to object and object into primitive , so we can perform more opertions on that object.
+
+When we box any primitive data type with the object of that Wrapper class then that is called boxing.
+Example :- int i = 15 ;
+	   Integer a = Integer.valueof(i);
+But if we  Integer b = i ; 
+	This is known as auto - boxing.
+Here primitive is wrapped around an object.
+We wrapped i with a and b 
+
+Well
+When we assign the value of wrapper obj to a primitive data type that is called unboxing
+Example :- Float h = Float.valueof("12.5");
+	   float x = h.floatValue();  (This is unboxing)
+	   float y = h ; (Here , the method floatValue() is automatically called , Hence it is know as AUTO-UNBOXING. )
+In general words getting the value of data type from an object to the primitive data type is unboxing. 

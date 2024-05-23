@@ -1,7 +1,7 @@
 package bank;
 
-public class DepositAmt {
-    public static void Deposit(int depositAmount) throws NetBankingE {
+public class DepositAmt extends Banking_Abstract_Deposit{
+    public void Deposit(int depositAmount) throws NetBankingException {
         int afterDeposit = AccountInfo.getBalance() + depositAmount;
         if (depositAmount == 0) {
             System.out.println("No Money Added");

@@ -3,8 +3,8 @@ package bank;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-class NetBankingE extends RuntimeException {
-    NetBankingE(String message) {
+class NetBankingException extends RuntimeException {
+    NetBankingException() {
         super("THERE MIGHT BE ANY ERROR !!! ");
     }
 }
@@ -12,7 +12,8 @@ class NetBankingE extends RuntimeException {
 public class InternalWork {
     Credentials objCred = new Credentials();
     AccountInfo ObjBal = new AccountInfo();
-
+    WithdrawalAction objWithdraw = new WithdrawalAction();
+    DepositAmt objDeposit = new DepositAmt();
 
     public InternalWork() {
         Scanner input = new Scanner(System.in);
@@ -39,12 +40,12 @@ public class InternalWork {
             System.out.println("B. DEPOSIT ");
             String deposit = "DEPOSIT";
             String B = "B";
-            System.out.println("C. WITHDRAWL / TRANSFER ");
-            String withdrawl = "WITHDRAWL";
+            System.out.println("C. WITHDRAWAL / TRANSFER ");
+            String withdrawal = "WITHDRAWAL";
             String transfer = "TRANSFER";
             String C = "C";
             System.out.println("D. WANT TO SEE YOUR UNIQUE ID ");
-            String uniqueIDfetch = "WANT TO SEE YOUR UNIQUE ID";
+            String uniqueID_fetch = "WANT TO SEE YOUR UNIQUE ID";
             String D = "D";
             System.out.println("E. CHANGE PASSWORD");
             String change_passcode = "CHANGE PASSWORD";
@@ -59,13 +60,13 @@ public class InternalWork {
                 } else if (userChoice.equalsIgnoreCase(deposit) || userChoice.equalsIgnoreCase(B)) {
                     System.out.println("Enter the amount you want to deposit : ");
                     int DepoAmt = input.nextInt();
-                    DepositAmt.Deposit(DepoAmt);
-                } else if (userChoice.equalsIgnoreCase(withdrawl) || userChoice.equalsIgnoreCase(C)
+                    objDeposit.Deposit(DepoAmt);
+                } else if (userChoice.equalsIgnoreCase(withdrawal) || userChoice.equalsIgnoreCase(C)
                         || userChoice.equalsIgnoreCase(transfer)) {
-                    System.out.println("Enter the amount you want to withdraw : ");
+                    System.out.println("Enter the amount you want to objWithdraw : ");
                     int WithdAmt = input.nextInt();
-                    WithdrawalAction.Withdrawl(WithdAmt);
-                } else if (userChoice.equalsIgnoreCase(uniqueIDfetch) || userChoice.equalsIgnoreCase(D)) {
+                    objWithdraw.withdrawal(WithdAmt);
+                } else if (userChoice.equalsIgnoreCase(uniqueID_fetch) || userChoice.equalsIgnoreCase(D)) {
                     System.out.println("ITS A PRIVATE CREDENTIAL TO SEE IT ENTER YOUR MOB NUM : ");
                     int verificationNum = input.nextInt();
                     if (verificationNum == Credentials.getUserMobNUmber()) {
@@ -83,19 +84,18 @@ public class InternalWork {
                             System.out.println("OKAYYY OKAYYY YOU CAN CHANGE THE PASSWORD ");
                             System.out.println(
                                     "BUT I AM LEARNING JDBC TILL THEN YOU HAVE TO CHANGE INSIDE THE PROGRAM : ");
+                            input.nextLine();
                             String userPassCODE = input.nextLine();
                             objCred.changePassword(userPassCODE);
                             System.out.println(Credentials.getPasscode());// This line isnt working
                             System.out.println("YOUR PASSWORD HAS BEEN CHANGED ");
-                        }else if(finalpasswordchangeOption.equalsIgnoreCase(No)){
-                            System.out.println("OKAY NO CHANGE IN PASSWORD");
                         }else {
-                            System.out.println("CREDENTIALS MISMATCHED !!!!");
+                            System.out.println("RETRY MAYBE SOME ERROR ");
                         }
                     }
 
                 }
-            } catch (NetBankingE e) {
+            } catch (NetBankingException e) {
                 System.out.println(e.getMessage());
             } catch (InputMismatchException c) {
                 System.out.println("Entered a wrong input ");
@@ -106,7 +106,7 @@ public class InternalWork {
             }
         } else if (!passcode.equals(Credentials.getPasscode())) {
             System.out.println("PASSWORD IS WRONG !!!!");
-        } else if (!uniqueID.equals(Credentials.getAccNumber())) {
+        } else {
             System.out.println("UNIQUE ID IS WRONG !!!!");
         }
     }
