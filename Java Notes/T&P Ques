@@ -1,0 +1,19 @@
+What is an object ? give examoles of real world obj .
+An obj states and behaviour are two different things realte each other
+define data abstraction?
+define encapsulation ?
+What is message passing among obj ?
+
+
+An object is an isnstance of class , it is used to refer to a particular point of a class althought it access the whole class. It is obtained at run time .It is created with new keyword and constructor of the class .It is used call methods or data member. .Its takes space in heap mem .A very good example is - I am object of human class (Like a human class might have many human but i am an object of that class ) or A particular car can be obj of vechile class
+
+
+Yes,State and Behavior are two different things, Like behaviour is the action of the object what will the object perform and state is wheather it is performing or not like A fan gives air is its behavior but if it is in circular motion or not is the state 
+
+
+Data Abstraction is implimenting security to data using access modifiers. Like a data member can be public, private , protectected . it is giving the user authority from where it can use the data like A private member can be used within the class but a public data member can be used from anywhere in the system also we can do it via abstract class , package and interface.
+
+Encapsulation is binding similar type of data and member together and givinng it a behaviour and security using specific keywords. A class can bind similar type of data and function together.Its avoids the misibilty in data
+
+
+Message passing is a technique where we fetch data from any class (in java , as it dont have global variable) using object , that can be done in different way too( using static keyword) but by using object we can provide that data to a particular place.

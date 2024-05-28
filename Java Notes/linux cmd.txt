@@ -1,0 +1,54 @@
+clear is used to clear screen 
+
+ls list content of directory	
+
+directory is a set of files just like folder in windows
+
+file is a collection of info and data
+
+cat is used to create a file
+
+to save use ctrl + d
+ after saving we return to cmd promt/ cmd line
+
+use cat > to create
+
+use only cat file name to open
+
+mkdir is use to create a directory
+
+cp to copy file
+ 
+cd .. in go back
+
+mv is used to rename and to move file
+
+rmdir is used to dlt to dlt empty dir
+
+rm -r file name is used to dlt dir with files
+
+rm means remove 
+
+touch is create a file and change access time
+
+after opening a file through cat use head -x filename ton see x numbers of line
+
+tail is used as same from lower lines
+
+grep "word you wanna search" file name
+ 
+diff is used to find difference between two file
+cmd: diff first_file-name second-file-name
+
+du is used for disk usage 
+
+df is used for disk free
+
+find file_name is used to find that thing
+
+man is used to see help or manual pages of specific cmd
+
+type file_name used to know file type
+
+
+

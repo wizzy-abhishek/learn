@@ -1,6 +1,6 @@
 package bank;
 
-public interface Banking_Interfaces_Withdrawal {
-    public  void withdrawal(int withdrawalAmt);
+public abstract class Banking_Interfaces_Withdrawal {
+    public abstract void withdrawal(String withdrawalAmt);
 }
 

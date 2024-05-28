@@ -1,0 +1,1 @@
+@ create an application to conduct exam with an interface where both mcq and long answer type where the teacher end only has to feed answer for mcqs for checking and subjective answers will be conducted by AI .... 👻😉😜

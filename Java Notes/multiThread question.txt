@@ -1,0 +1,36 @@
+MT
+Beginner
+
+What is multithreading?
+Explain the difference between a process and a thread.
+What are the benefits of using multithreading?
+What are some common applications of multithreading?
+Briefly describe the concept of a thread lifecycle.
+Intermediate
+
+Explain how threads share resources in a program.
+What is a race condition? How can you prevent it?
+Describe different synchronization mechanisms used in multithreading (e.g., mutex, semaphore).
+What are deadlocks? How can you avoid them?
+Explain the concept of thread pools and their advantages.
+Moderate
+
+Discuss the differences between user-level threads and kernel-level threads.
+How does context switching work in multithreading?
+Explain the producer-consumer problem and how to solve it using threads.
+Describe different thread scheduling algorithms (e.g., First-Come-First-Served, Priority scheduling).
+How can you handle exceptions in multithreaded programs
+
+
+
+Beginner
+
+Print Numbers: Write a program that creates two threads. One thread should print odd numbers from 1 to 10, and the other thread should print even numbers from 2 to 10. (This is a good exercise to understand how to create threads and get them to run concurrently.)
+
+Race Condition:  Simulate a race condition by creating two threads that increment a shared counter variable. How can you fix this race condition using synchronization? (This will introduce you to the concept of race conditions and how to prevent them using synchronization mechanisms.)
+
+Intermediate
+
+Producer-Consumer Problem: Implement a producer-consumer pattern using threads and a shared buffer. The producer thread should generate items and add them to the buffer, while the consumer thread should remove items from the buffer and process them. (This is a classic multi-threading problem that teaches you about communication and synchronization between threads.)
+
+Countdown Latch:  Write a program that uses a countdown latch to synchronize multiple worker threads. The main thread should wait until all worker threads finish their tasks before proceeding. (This will introduce you to countdown latches, a useful synchronization tool for waiting on multiple tasks.)

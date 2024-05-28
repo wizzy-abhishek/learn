@@ -1,0 +1,6 @@
+jdk 
+vs code
+mysql 
+applet viewer 
+git
+
