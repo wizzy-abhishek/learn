@@ -1,0 +1,12 @@
+Hashing is a technique to store key or value or key-value pair in a hash table.
+It uses the formula x%10 and what the outcome comes it stores it in that index,
+there might be a possibility that two or three value may have same outcome then there are two type of technique for hashing :
+
+ 1.] Open Addressing                    2.] Chaining
+
+ In Open addressing we store the data only 75% so we can traverse for the data because in hashing to stop the traversal
+ its imp to have empty index . If we get two or more similar value of x%10 in open addressing then we store it into next index
+ So it is less optimal and chances of error are more and having two or more similar x%10 is called collision.
+
+ In chaining each bucket have a node connected to it and the key or value or key-value pair is stored in that LikedList
+ and if similar value of x%10 arises then ib the same bucket a succession node of LinkedList is being created that stores the value
