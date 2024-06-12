@@ -12,9 +12,11 @@ public class Cf16_HashMap {
         hm.put(3 , "Papa");
         hm.put(4 , "Bhai");
         hm.put(0, "Abhi");
+        hm.replace(0 , "Abhishek");
 
         System.out.println(hm);
         hm.forEach((number , name) ->System.out.println(number + " " + name));
+
 
     }
 }

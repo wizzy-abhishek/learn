@@ -26,8 +26,6 @@ class Account implements Serializable {
         this.balance = balance ;
     }
 
-
-
     public Account() {
 
     }
@@ -48,6 +46,7 @@ public class Cf_challenge {
         HashMap<String, Account> hm = new HashMap<>();
 
         try {
+            
             FileInputStream fis = new FileInputStream("P:\\Code\\learning_java\\collection_framework\\Account");
             ObjectInputStream ois = new ObjectInputStream(fis);
             Account acc = null;
@@ -60,10 +59,11 @@ public class Cf_challenge {
             ois.close();
             fis.close();
         }catch (IOException e){
-
+            System.out.println("Some problem arrived " + e );
         }
-        System.out.println("What do you want to do : ");
-        System.out.println("    1. Create an Account \n" +
+
+        System.out.println("What do you want to do : " + "\n" +
+                "    1. Create an Account \n" +
                 "    2. Delete an Account\n" +
                 "    3. View Acc\n" +
                 "    4. View all Acc\n" +
@@ -73,42 +73,62 @@ public class Cf_challenge {
         Integer userValue = Integer.parseInt(br.readLine());
 
         if (userValue.equals(1)) {
-            System.out.println("Enter Account/Mobile number : ");
-            String accountNumber = br.readLine();
-            System.out.println("Enter the name : ");
-            String name = br.readLine();
-            System.out.println("Whats the initial balance : ");
-            double balance = Double.parseDouble(br.readLine());
-            Account created = new Account(accountNumber, name, balance);
-            hm.put(accountNumber, created);
-            System.out.println("Account created.");
+            create(br , hm);
 
-        } else if (userValue.equals(2)) {
-            System.out.println("Enter the account number you want to delete : ");
-            String del = br.readLine();
-            hm.remove(del);
-        } else if (userValue.equals(3)) {
-            System.out.println("Enter the account number : ");
-            String fetch = br.readLine();
-            System.out.println(hm.get(fetch));
-        } else if (userValue.equals(4)) {
+        }
+        else if (userValue.equals(2))
+        {
+            delete(br , hm);
+        }
+        else if (userValue.equals(3))
+        {
+            viewAcc(br , hm);
+        }
+        else if (userValue.equals(4))
+        {
             for (Account a : hm.values()) {
                 System.out.println(a);
             }
-        } else if (userValue.equals(6)) {
+        }
+        else if (userValue.equals(6))
+        {
             System.out.println("Thank you for using our service ");
-        } else if (userValue.equals(5)) {
-            System.out.println("All file saved. ");
+        }
+        else if (userValue.equals(5)) {
+            System.out.println("All file saved.");
         }
 
         FileOutputStream fos = new FileOutputStream("P:\\Code\\learning_java\\collection_framework\\Account");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeInt(hm.size());
-        for (
-                Account a : hm.values()) {
+
+        for (Account a : hm.values())
+        {
             oos.writeObject(a);
         }
         br.close();
         isr.close();
+    }
+    public static void create (BufferedReader br , HashMap<String , Account > hm)throws Exception{
+        System.out.println("Enter Account/Mobile number : ");
+        String accountNumber = br.readLine();
+        System.out.println("Enter the name : ");
+        String name = br.readLine();
+        System.out.println("Whats the initial balance : ");
+        double balance = Double.parseDouble(br.readLine());
+        Account created = new Account(accountNumber, name, balance);
+        hm.put(accountNumber, created);
+        System.out.println("Account created.");
+    }
+
+    public static void delete(BufferedReader br ,HashMap<String , Account > hm) throws Exception{
+        System.out.println("Enter the account number you want to delete : ");
+        String del = br.readLine();
+        hm.remove(del);
+    }
+    public static void viewAcc(BufferedReader br ,HashMap<String , Account > hm) throws Exception{
+        System.out.println("Enter the account number : ");
+        String fetch = br.readLine();
+        System.out.println(hm.get(fetch));
     }
 }
