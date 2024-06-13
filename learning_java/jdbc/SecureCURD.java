@@ -36,8 +36,9 @@ class ShowTableOperation extends BaseOperation {
             throw new RuntimeException(e);
         }
     }
+}
 
-    static class InsertionOperation extends BaseOperation {
+class InsertionOperation extends BaseOperation {
         @Override
         public void performOperation(Connection con, BufferedReader br) throws IOException {
             try {
@@ -67,7 +68,7 @@ class ShowTableOperation extends BaseOperation {
         }
     }
 
-    static class DeletionOperation extends BaseOperation {
+class DeletionOperation extends BaseOperation {
         @Override
         public void performOperation(Connection con, BufferedReader br) throws IOException {
             try {
@@ -94,7 +95,7 @@ class ShowTableOperation extends BaseOperation {
         }
     }
 
-    static class UpdateOperation extends BaseOperation {
+class UpdateOperation extends BaseOperation {
 
         @Override
         public void performOperation(Connection con, BufferedReader br) throws IOException {
@@ -128,7 +129,7 @@ class ShowTableOperation extends BaseOperation {
         }
     }
 
-    public static class SecureCURD {
+public class SecureCURD {
         public static void main(String[] args) {
             try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
                 String url = "jdbc:mysql://localhost:3306/univ";
@@ -137,7 +138,7 @@ class ShowTableOperation extends BaseOperation {
                 String password = br.readLine();
                 Connection con = DriverManager.getConnection(url, username, password);
 
-                DatabaseOperations operation;
+                DatabaseOperations operation = null;
 
                 String userInput = "";
 
@@ -153,6 +154,9 @@ class ShowTableOperation extends BaseOperation {
                         operation = new DeletionOperation();
                     } else if (userInput.equalsIgnoreCase("update")  ) {
                         operation = new UpdateOperation();
+                    } else if(userInput.equalsIgnoreCase("exit")){
+                        System.out.println("Thank you for using our system");
+                        continue;
                     } else {
                         System.out.println("Invalid input. Please try again.");
                         continue;
@@ -169,4 +173,3 @@ class ShowTableOperation extends BaseOperation {
             }
         }
     }
-}
