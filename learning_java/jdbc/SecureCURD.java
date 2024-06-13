@@ -71,6 +71,8 @@ class ShowTableOperation extends BaseOperation {
         @Override
         public void performOperation(Connection con, BufferedReader br) throws IOException {
             try {
+                query = "DELETE FROM students where roll = ? ;" ; // this statement was missing
+
                 PreparedStatement pstm = con.prepareStatement(query);
 
                 System.out.println("Enter the roll number (in integer format) : ");
